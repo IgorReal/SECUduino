@@ -22,8 +22,8 @@ void ATD45DB161D::Init()
   	/* Disable device */
   	DF_CS_inactive;
   
-	/* Setup SPI */
-	SPCR = (1 << SPE) | (1 << MSTR) | (1 << CPOL) | (1 << CPHA)| (0<<SPR1)|(0<<SPR0);
+  	// activamos el SPI de Arduino como Master y Fosc/2=8 MHz
+  	SPCR = (1<<SPE)|(1<<MSTR) | (0<<SPR1)|(0<<SPR0);
   	SPSR = (1<<SPI2X);
 
 	/* Cleanup registers */
